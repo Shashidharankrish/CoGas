@@ -1,0 +1,33 @@
+<div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo"> 
+  <div class="wrapper wrapper--w680">
+      <div class="card card-1">
+          <div class="card-heading"></div>
+          <div class="card-body">
+              <h2 class="title">Add Security</h2>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
+                      <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+                          <div *ngIf="f.Name.errors.required">First Name is required</div>
+                      </div>
+                  </div>
+
+                  
+                  <div class="form-group">
+                      <label>Phone Number</label>
+                      <input type="text" (keypress)="keyPress($event)"  minlength=10 maxlength=15 formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+                      <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                          <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+                          <div *ngIf="f.phoneNumber.errors.minlength">Phone Number must be 5 numbers</div>
+                          <div *ngIf="f.phoneNumber.errors.maxlength">Phone Number must be 10 numbers</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <button class="btn btn-success">Add</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
