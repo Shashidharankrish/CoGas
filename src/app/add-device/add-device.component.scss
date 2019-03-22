@@ -1,14 +1,8 @@
 
-/* ==========================================================================
-   #FONT
-   ========================================================================== */
    .font-robo {
     font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   }
   
-  /* ==========================================================================
-     #GRID
-     ========================================================================== */
   .row {
     display: -webkit-box;
     display: -webkit-flex;
@@ -40,13 +34,7 @@
     }
   }
   
-  /* ==========================================================================
-     #BOX-SIZING
-     ========================================================================== */
-  /**
-   * More sensible default box-sizing:
-   * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
-   */
+
   html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -64,12 +52,6 @@
     box-sizing: inherit;
   }
   
-  /* ==========================================================================
-     #RESET
-     ========================================================================== */
-  /**
-   * A very simple reset that sits on top of Normalize.css.
-   */
   body,
   h1, h2, h3, h4, h5, h6,
   blockquote, p, pre,
@@ -81,26 +63,7 @@
     padding: 0;
   }
   
-  /**
-   * Remove trailing margins from nested lists.
-   */
-  li > ol,
-  li > ul {
-    margin-bottom: 0;
-  }
-  
-  /**
-   * Remove default table spacing.
-   */
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  
-  /**
-   * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
-   *    on fieldsets.
-   */
+ 
   fieldset {
     min-width: 0;
     /* [1] */
@@ -113,9 +76,6 @@
     border: none;
   }
   
-  /* ==========================================================================
-     #PAGE WRAPPER
-     ========================================================================== */
   .page-wrapper {
     min-height: 100vh;
   }
@@ -153,17 +113,7 @@
   h6 {
     font-size: 13px;
   }
-  
-  /* ==========================================================================
-     #BACKGROUND
-     ========================================================================== */
-  .bg-blue {
-    background: #381d04;
-  }
-  
-  /* ==========================================================================
-     #SPACING
-     ========================================================================== */
+    
   .p-t-100 {
     padding-top: 100px;
   }
@@ -176,9 +126,6 @@
     padding-bottom: 100px;
   }
   
-  /* ==========================================================================
-     #WRAPPER
-     ========================================================================== */
   .wrapper {
     margin: 0 auto;
   }
@@ -187,9 +134,6 @@
     max-width: 680px;
   }
   
-  /* ==========================================================================
-     #BUTTON
-     ========================================================================== */
   .btn {
     line-height: 40px;
     display: inline-block;
@@ -221,57 +165,6 @@
     background: #4dae3c;
   }
   
-  /* ==========================================================================
-     #DATE PICKER
-     ========================================================================== */
- 
-  
-  input[type="date" i] {
-    padding: 14px;
-  }
-  
-  .table-condensed td, .table-condensed th {
-    font-size: 14px;
-    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
-    font-weight: 400;
-  }
-  
-  .daterangepicker td {
-    width: 40px;
-    height: 30px;
-  }
-  
-  .daterangepicker {
-    border: none;
-    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-    display: none;
-    border: 1px solid #e0e0e0;
-    margin-top: 5px;
-  }
-  
-  .daterangepicker::after, .daterangepicker::before {
-    display: none;
-  }
-  
-  .daterangepicker thead tr th {
-    padding: 10px 0;
-  }
-  
-  .daterangepicker .table-condensed th select {
-    border: 1px solid #ccc;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    font-size: 14px;
-    padding: 5px;
-    outline: none;
-  }
-  
-  /* ==========================================================================
-     #FORM
-     ========================================================================== */
   input {
     outline: none;
     margin: 0;
@@ -335,10 +228,6 @@
     /* Microsoft Edge */
     color: #555;
   }
-  
-  /* ==========================================================================
-     #SELECT2
-     ========================================================================== */
   .select--no-search .select2-search {
     display: none !important;
   }
@@ -415,17 +304,10 @@
     margin-top: 5px;
     overflow: hidden;
   }
-  
-  /* ==========================================================================
-     #TITLE
-     ========================================================================== */
   .title {
     margin-bottom: 37px;
   }
   
-  /* ==========================================================================
-     #CARD
-     ========================================================================== */
   .card {
     overflow: hidden;
     -webkit-border-radius: 3px;
@@ -438,11 +320,6 @@
     -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card-1 .card-heading {
-    // background: url("../images/bg-head-02.jpg") center center/cover no-repeat;
-   /* padding-top: 210px;*/
   }
   
   .card-1 .card-body {
