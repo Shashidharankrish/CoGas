@@ -9,6 +9,7 @@ import { AddDeviceComponent } from './add-device/add-device.component';
 import { LoginComponent } from './login/login.component';
 import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddDeviceComponent,
     LoginComponent,
     AssignShiftComponent,
-    NavbarComponent
+    NavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
