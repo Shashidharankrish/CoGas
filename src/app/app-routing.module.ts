@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
 import { AssignShiftComponent } from './assign-shift/assign-shift.component';
-import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { AddDeviceComponent } from './add-device/add-device.component';
+import { Addsecurity, AddsecurityComponent } from './addsecurity/addsecurity.component';
+
 
 const routes: Routes = [
- { path:"",component:AdminComponent},
- { path:"login",component:LoginComponent},
- { path:"assignShift",component:AssignShiftComponent}
-
+ { path:"assignShift",component:AssignShiftComponent},
+ { path: "admin", component:AdminComponent},
+ { path: "add-device", component:AddDeviceComponent},
+ { path: "assignshift", component:AssignShiftComponent},
+ { path: "addsecurity", component:AddsecurityComponent},
+ { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];
 
 @NgModule({
