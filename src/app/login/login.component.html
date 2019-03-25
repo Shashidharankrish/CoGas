@@ -4,7 +4,7 @@
             <div class="card-heading"></div>
             <div class="card-body">
                 <h2 class="title">Login</h2>
-                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-success">Add</button>
+                        <button class="btn btn-success">Login</button>
                     </div>
                 </form>
             </div>
