@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     AssignShiftComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
