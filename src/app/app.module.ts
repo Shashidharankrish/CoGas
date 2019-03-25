@@ -8,6 +8,7 @@ import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
 import { LoginComponent } from './login/login.component';
 import { AssignShiftComponent } from './assign-shift/assign-shift.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AssignShiftComponent } from './assign-shift/assign-shift.component';
     AddsecurityComponent,
     AddDeviceComponent,
     LoginComponent,
-    AssignShiftComponent
+    AssignShiftComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
