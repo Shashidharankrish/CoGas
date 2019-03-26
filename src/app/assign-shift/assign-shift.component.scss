@@ -66,13 +66,39 @@
     border-bottom-width: 10px;
     border-block-end-color: #ececd1;
     background: #ececd1;
+    color: black;
 }
-.btn{
+.btn1 {
     background-color: #2e3030 !important;
     position: relative !important;
     left: 0% !important;
   }
+  .btn2{
+    background-color: #2e3030 !important;
+    position: relative !important;
+    left: 0% !important;
+    padding: 10px;
+    border-radius: 50%;
+  } 
   input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"] {
     -webkit-appearance: listbox;
     background-color: #ececd1;
+  }
+
+  .table_2 thead th{
+    background: 	rgba(220, 20, 60, 0.411);
+    border-bottom-width: 0px;
+    border-color: #9c1849;
+    color: azure;
+  }
+  .table-dark {
+    color: #fff;
+    background-color: #5b5e5fde;
+  }
+  .td{
+    color: #fff;
+  }
+
+  .table{
+    margin-right:30px;;
   }

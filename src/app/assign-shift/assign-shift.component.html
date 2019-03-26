@@ -1,12 +1,7 @@
-<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
+<div class="bg-image">
+<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table_1">
   <thead>
     <tr>
-      <th>
-        Device
-      </th>
-      <th>
-        Security
-      </th>
       <th>
         Shift
       </th>
@@ -16,6 +11,15 @@
       <th>
         End date
       </th>
+      <th>
+        Security
+      </th>
+      <th>
+        Device
+      </th>
+
+
+
       <th></th>
     </tr>
   </thead>
@@ -24,20 +28,21 @@
       <td>
         <div class="dropdown">
 
-          <select class="custom-select" style="width:200px;" searchable="Search here..">
-            <option value="" disabled selected>Select-Device</option>
-            <option value="1">Device 1</option>
-            <option value="2">Device 2</option>
-            <option value="3">Device 3</option>
+          <select class="custom-select" style="width:200px;" searchable="Search here.."  required [(ngModel)]=selectedShift>
+            <option value="" disabled selected>Select-Shift</option>
+            <option value="1">Shift 1</option>
+            <option value="2">Shift 2</option>
+            <option value="3">Shift 3</option>
 
           </select>
         </div>
-
       </td>
+      <td><input class="input-group date" type="date"  required [(ngModel)]=selectedStartDate></td>
+      <td><input class="input-group date" type="date"  required [(ngModel)]=selectedEndDate></td>
       <td>
         <div class="dropdown">
 
-          <select class="custom-select" style="width:200px;" searchable="Search here..">
+          <select class="custom-select" style="width:200px;" searchable="Search here.." required [(ngModel)]=selectedSecurity>
             <option value="" disabled selected>Select-Security</option>
             <option value="1">Security 1</option>
             <option value="2">Security 2</option>
@@ -49,34 +54,77 @@
       <td>
         <div class="dropdown">
 
-          <select class="custom-select" style="width:200px;" searchable="Search here..">
-            <option value="" disabled selected>Select-Shift</option>
-            <option value="1">Shift 1</option>
-            <option value="2">Shift 2</option>
-            <option value="2">Shift 3</option>
+          <select class="custom-select" style="width:200px;" searchable="Search here.." required [(ngModel)]=selectedDevice>
+            <option value="" disabled selected>Select-Device</option>
+            <option value="1">Device 1</option>
+            <option value="2">Device 2</option>
+            <option value="3">Device 3</option>
 
           </select>
         </div>
+
       </td>
-      <td><input class="input-group date" type="date"></td>
-      <td><input class="input-group date" type="date"></td>
-      <td><button class="btn btn-success">Update</button></td>
+
+
+
+      <td><button class="btn btn-success btn1" (click)="update()">Update</button></td>
     </tr>
     <tr>
     </tr>
   </tbody>
 </table>​
+<!-- ********************************** -->
+
+
+<table class="table table-bordered table-dark table_2" >
+    <thead>
+      <tr>
+        <th scope="col">Shift</th>
+        <th scope="col">Start date</th>
+        <th scope="col">End date</th>
+        <th scope="col">security</th>
+        <th scope="col">Device</th>
+        <th scope="col">Edit</th>
+
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let values of assignedDtoArray,let i = index">
+        <td>{{values.shift}}</td>
+        <td>{{values.startDate}}</td>
+        <td>{{values.endDate}}</td>
+        <td>{{values.security}}</td>
+        <td>{{values.device}}</td>
+        <td><button class="btn btn-success btn2" (click)="edit(values,i)">Edit</button></td>
+
+
+
+      </tr>
+      <!-- <tr>
+        <th scope="row">2</th>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>
+
+</div>
 
 
 
 
+<dl-date-time-picker
+    startView="day"
+    maxView="year"
+    minView="minute"
+    minuteStep="5"
+    [(ngModel)]="selectedDate"
+>
+</dl-date-time-picker>
 
-<!-- <select class="mdb-select md-form" searchable="Search here..">
-  <option value="" disabled selected>Choose your country</option>
-  <option value="1">USA</option>
-  <option value="2">Germany</option>
-  <option value="3">France</option>
-  <option value="3">Poland</option>
-  <option value="3">Japan</option>
-</select>
-<label>Label example</label> -->
+
+
