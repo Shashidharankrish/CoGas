@@ -19,12 +19,7 @@ const routes: Routes = [
  { path: "assignshift", component:AssignShiftComponent},
  { path: "addsecurity", component:AddsecurityComponent},
  { path: "home", component:HomeComponent},
-<<<<<<< HEAD
- { path: "add-shift", component:AddShiftComponent},
- { path: '', redirectTo: '/home', pathMatch: 'full'},
-=======
  { path: '', redirectTo: 'home', pathMatch: 'full'},
->>>>>>> d771ca5ef3b994267b3cf06c1915a533ec939339
 ];
 
 @NgModule({

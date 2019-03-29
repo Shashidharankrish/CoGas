@@ -17,17 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { DeviceListComponent } from './device-list/device-list.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
-<<<<<<< HEAD
-import { AddShiftComponent } from './add-shift/add-shift.component';
-import { AdminListComponent } from './admin-list/admin-list.component';
-import { SecurityListComponent } from './security-list/security-list.component';
-import { AssignmentComponent } from './assignment/assignment.component';
-import { AddAdminComponent } from './add-admin/add-admin.component';
-
-=======
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
->>>>>>> d771ca5ef3b994267b3cf06c1915a533ec939339
 
 @NgModule({
   declarations: [
@@ -41,14 +32,7 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
     HomeComponent,
     DeviceListComponent,
     EditDeviceComponent,
-<<<<<<< HEAD
-    AddShiftComponent,
     AdminListComponent,
-    SecurityListComponent,
-    AssignmentComponent,
-=======
-    AdminListComponent,
->>>>>>> d771ca5ef3b994267b3cf06c1915a533ec939339
     AddAdminComponent
   ],
   imports: [
