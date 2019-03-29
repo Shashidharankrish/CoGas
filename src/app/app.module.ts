@@ -18,6 +18,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { DeviceListComponent } from './device-list/device-list.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
+import { AddShiftComponent } from './add-shift/add-shift.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
+import { SecurityListComponent } from './security-list/security-list.component';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { AddAdminComponent } from './add-admin/add-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,12 @@ import { EditDeviceComponent } from './edit-device/edit-device.component';
     DashboardComponent,
     HomeComponent,
     DeviceListComponent,
-    EditDeviceComponent
+    EditDeviceComponent,
+    AddShiftComponent,
+    AdminListComponent,
+    SecurityListComponent,
+    AssignmentComponent,
+    AddAdminComponent
   ],
   imports: [
     BrowserModule,

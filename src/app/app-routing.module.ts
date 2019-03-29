@@ -7,6 +7,7 @@ import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { HomeComponent } from './home/home.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
+import { AddShiftComponent } from './add-shift/add-shift.component';
 
 const routes: Routes = [
  { path:"device-list",component:DeviceListComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
  { path: "assignshift", component:AssignShiftComponent},
  { path: "addsecurity", component:AddsecurityComponent},
  { path: "home", component:HomeComponent},
+ { path: "add-shift", component:AddShiftComponent},
  { path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 

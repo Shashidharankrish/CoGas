@@ -109,7 +109,8 @@ export class CrudService {
   AddShift(shift: Shifts) {
     this.shiftsRef.push({
       shiftName: shift.shiftName,
-      availability: shift.availability
+      count: shift.count,
+      availability: shift.availability,
     })
     alert(shift.shiftName+" Added");
   }
