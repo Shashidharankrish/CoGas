@@ -19,10 +19,10 @@ showSuccess(){
   this.toastr.success("Device Added")
 }
   ngOnInit() {
-    this.crudApi.GetDevicesList();  // Call GetStudentsList() before main form is being called
-    this.devicform();              // Call student form when component is ready
+    this.crudApi.GetDevicesList();  // Call GetDevicesList() before main form is being called
+    this.deviceform();              // Call Devices form when component is ready
   }
-devicform(){
+deviceform(){
   this.deviceForm = this.fb.group({
     deviceName: [''],
     deviceType: [''],

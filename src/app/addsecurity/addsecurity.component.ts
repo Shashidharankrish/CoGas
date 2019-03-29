@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import * as jQuery from 'jquery';
-window['jQuery'] = jQuery;
+import { CrudService } from '../shared/crud.service';    // CRUD services API
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addsecurity',
@@ -9,23 +9,49 @@ window['jQuery'] = jQuery;
   styleUrls: ['./addsecurity.component.scss']
 })
 export class AddsecurityComponent implements OnInit {
-  registerForm: FormGroup;
-  submitted = false;
-  private regex: RegExp = new RegExp(/^[0-9]+(\.[0-9]*){0,1}$/);
-  constructor(private formBuilder: FormBuilder) { }
-
+  public securityForm: FormGroup;
+  constructor(
+    public crudApi: CrudService,
+    public fb: FormBuilder,
+    public toastr: ToastrService,       // Form Builder service for Reactive forms
+  ) {}
+showSuccess(){
+  this.toastr.success("Security Added")
+}
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      Name: ['', Validators.required],
-      phoneNumber: ['', [Validators.required]]
-  });
+    this.crudApi.GetSecuritiesList();  // Call GetDevicesList() before main form is being called
+    this.securityform();              // Call Devices form when component is ready
   }
-  keyPress(event: any) {
-    const pattern = /[0-9\+\-\ ]/;
+securityform(){
+  this.securityForm = this.fb.group({
+    securityName: [''],
+    phoneNumber: [''],
+    count: [''],
+    availability: [''],
+})
+}
 
-    let inputChar = String.fromCharCode(event.charCode);
-    if (event.keyCode != 8 && !pattern.test(inputChar)) {
-      event.preventDefault();
-    }
-  }
+get securityName(){
+  return this.securityForm.get('securityName');
+}
+
+get phoneNumber(){
+  return this.securityForm.get('phoneNumber');
+}
+
+get securityAvailability(){
+  return this.securityForm.get('availability');
+}
+
+get securityCount(){
+  return this.securityForm.get('count');
+}
+
+ResetForm(){
+  this.securityForm.reset();
+}
+submitSecurityData(){
+this.crudApi.AddSecurity(this.securityForm.value);
+this.ResetForm();
+}
 }
