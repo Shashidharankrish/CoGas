@@ -11,7 +11,13 @@ import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { DeviceListComponent } from './device-list/device-list.component';
+import { EditDeviceComponent } from './edit-device/edit-device.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +29,17 @@ import { HomeComponent } from './home/home.component';
     AssignShiftComponent,
     NavbarComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    DeviceListComponent,
+    EditDeviceComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,FormsModule
+    AppRoutingModule,ReactiveFormsModule,FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

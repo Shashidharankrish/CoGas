@@ -1,30 +1,41 @@
-<div class="page-wrapper bg-image p-t-100 p-b-100 font-robo"> 
-  <div class="wrapper wrapper--w680">
-      <div class="card card-1">
-          <div class="card-heading"></div>
-          <div class="card-body">
-              <h2 class="title">Add Device</h2>
-              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                  <div class="form-group">
-                      <label>Name</label>
-                      <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
-                      <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
-                          <div *ngIf="f.Name.errors.required">Device Name is required</div>
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label>Type</label>
-                      <select class="form-control">
-                        <option>select</option>
-                        <option>App</option>
-                        <option>Device</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <button class="btn btn-success">Add</button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </div>
+<div class="pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Add Device</h1>
 </div>
+
+<!-- Device form -->
+<form [formGroup]="deviceForm" (ngSubmit)="submitDeviceData()" novalidate>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+
+            <div class="form-group">
+                <label>Device name</label>
+                <input type="text" formControlName="deviceName" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Device Type</label>
+                <input type="text" formControlName="deviceType" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Count</label>
+                <input type="email" formControlName="count" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Availability</label>
+                <input type="text" formControlName="availability" class="form-control" required>
+            </div>
+            <div class="form-group">
+                    <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+            </div>
+            <div class="form-group">
+                    <button type="submit" class="btn btn-success" [disabled]="!deviceForm.valid">Add Device</button>
+            </div>
+        </div>
+        
+
+    
+    <div class="col-sm-4"></div>
+</div>
+</form><!-- Device form ends-->

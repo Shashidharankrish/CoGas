@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AssignShiftComponent } from './assign-shift/assign-shift.component';
+import { DeviceListComponent } from './device-list/device-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
+import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { HomeComponent } from './home/home.component';
+import { EditDeviceComponent } from './edit-device/edit-device.component';
 
 const routes: Routes = [
- { path:"assignShift",component:AssignShiftComponent},
+ { path:"device-list",component:DeviceListComponent},
+ { path:"edit-device/:id",component:EditDeviceComponent},
  { path: "admin", component:AdminComponent},
  { path: "add-device", component:AddDeviceComponent},
  { path: "assignshift", component:AssignShiftComponent},

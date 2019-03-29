@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Edit Device Details</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group">
+      <!-- goBack() methos to back to previous component -->
+      <button class="btn btn-sm btn-outline-secondary" (click)="goBack()">Go Back</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Device's Edit Form -->
+<form [formGroup]="editForm" (ngSubmit)="updateForm()">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label>Device name</label>
+        <input type="text" formControlName="deviceName" #deviceName class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Device Type</label>
+        <input type="text" formControlName="deviceType" #deviceType class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Availability</label>
+        <input type="text" formControlName="availability" #availability class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Count</label>
+        <input type="text" formControlName="count" #count class="form-control">
+      </div>
+      <div class="form-group text-right">
+        <button type="submit" class="btn btn-success btn-block" [disabled]="!editForm.valid">
+          Update Device
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</form>
+<!-- Device's Edit Form ends-->
