@@ -48,7 +48,7 @@
           <td>{{device.availability}}</td>
           <td>{{device.count}}</td>
           <td class="text-center action-block">
-            <!-- routerLink="/edit-student/{{Device.$key}}" is refered to { path: 'edit-Device/:id', component: EditDeviceComponent } in app-routing.moudles.ts -->
+            <!-- routerLink="/edit-device/{{Device.$key}}" is refered to { path: 'edit-Device/:id', component: EditDeviceComponent } in app-routing.moudles.ts -->
            <i class="far fa-edit" routerLink="/edit-device/{{device.$key}}"></i>
             <i class="far fa-trash-alt" (click)="deleteDevice(device)"></i></td>
         </tr>   

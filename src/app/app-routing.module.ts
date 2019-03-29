@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DeviceListComponent } from './device-list/device-list.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
+import { AddAdminComponent } from './add-admin/add-admin.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
 import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { AddsecurityComponent } from './addsecurity/addsecurity.component';
@@ -11,12 +12,13 @@ import { EditDeviceComponent } from './edit-device/edit-device.component';
 const routes: Routes = [
  { path:"device-list",component:DeviceListComponent},
  { path:"edit-device/:id",component:EditDeviceComponent},
- { path: "admin", component:AdminComponent},
+ { path: "admin-list", component:AdminListComponent},
+ { path: "add-admin", component:AddAdminComponent},
  { path: "add-device", component:AddDeviceComponent},
  { path: "assignshift", component:AssignShiftComponent},
  { path: "addsecurity", component:AddsecurityComponent},
  { path: "home", component:HomeComponent},
- { path: '', redirectTo: '/home', pathMatch: 'full'},
+ { path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 
 @NgModule({

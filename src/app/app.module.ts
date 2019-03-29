@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
 import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
 import { LoginComponent } from './login/login.component';
@@ -18,11 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { DeviceListComponent } from './device-list/device-list.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
+import { AddAdminComponent } from './add-admin/add-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
     AddsecurityComponent,
     AddDeviceComponent,
     LoginComponent,
@@ -31,7 +31,9 @@ import { EditDeviceComponent } from './edit-device/edit-device.component';
     DashboardComponent,
     HomeComponent,
     DeviceListComponent,
-    EditDeviceComponent
+    EditDeviceComponent,
+    AdminListComponent,
+    AddAdminComponent
   ],
   imports: [
     BrowserModule,
