@@ -114,13 +114,12 @@ export class CrudService {
       count: shift.count,
       availability: shift.availability,
     })
-    alert(shift.shiftName+" Added");
   }
 
    // Fetch Single shift Object
-   Getshift(id: string) {
+   GetShift(id: string) {
     this.shiftRef = this.db.object('shifts-list/' + id);
-    return this.shiftsRef;
+    return this.shiftRef;
   }
 
   // Fetch shifts List

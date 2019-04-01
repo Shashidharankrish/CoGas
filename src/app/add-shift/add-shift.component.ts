@@ -45,7 +45,7 @@ shiftform(){
   }
   submitShiftData(){
   this.crudApi.AddShift(this.shiftForm.value);
-  this.shiftForm.controls['shiftName'].value + ' added successfully';
+  this.toastr.success(this.shiftForm.controls['shiftName'].value + ' added successfully');
   this.ResetForm();
   }
 }

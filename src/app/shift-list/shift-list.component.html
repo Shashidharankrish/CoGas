@@ -1,3 +1,55 @@
-<p>
-  shift-list works!
-</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Shift List</h1>
+  <!-- It won't show if there is no Shift data -->
+  <a routerLink="/add-shift" class="btn btn-success" *ngIf="hideWhenNoShift">
+    <i class="fas fa-plus custom-fa-plus"></i>
+    Add Shift
+  </a>
+</div>
+
+<div class="pricing-header mx-auto">
+
+  <!-- Preloader shows before the data loads-->
+  <div class="no-data text-center" *ngIf="preLoader">
+    <img src="assets/preloader.gif" class="preloader-icon" alt="No Shift">
+  </div>
+
+  <!-- No data shows when their is no Shift data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    <p class="nodata-msg">No Shift added yet!</p>
+    <a routerLink="/add-shift" class="btn btn-success">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add Shift
+    </a>
+  </div>
+
+  <!-- Showing Shift data -->
+  <div class="container">
+    
+  
+  <div class="table-responsive" *ngIf="hideWhenNoShift">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+        <tr>
+          <th scope="col">Shift ID</th>
+          <th scope="col">Shift name</th>
+          <th scope="col">Shift Avalability</th>
+          <th class="text-center" scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over Shift array and fetch the Shift's data -->
+        <tr *ngFor="let shift of Shift; let i = index;">
+          <th scope="row">{{shift.$key}}</th>
+          <td>{{shift.shiftName}}</td>
+          <td>{{shift.availability}}</td>
+          <td class="text-center action-block">
+            <!-- routerLink="/edit-shift/{{Shift.$key}}" is refered to { path: 'edit-Shift/:id', component: EditShiftComponent } in app-routing.moudles.ts -->
+           <i class="far fa-edit" routerLink="/edit-shift/{{shift.$key}}"></i>
+            <i class="far fa-trash-alt" (click)="deleteShift(shift)"></i></td>
+        </tr>   
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
