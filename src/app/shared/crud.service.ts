@@ -30,7 +30,6 @@ export class CrudService {
       count: device.count,
       availability: device.availability
     })
-    alert(device.deviceName+"Added");
   }
 
   // Fetch Single device Object
