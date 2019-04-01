@@ -102,7 +102,7 @@ export class CrudService {
 
   // Delete Security Object
   DeleteSecurity(id: string) {
-    this.securityRef = this.db.object('securites-list/' + id);
+    this.securityRef = this.db.object('securities-list/'+id);
     this.securityRef.remove();
   }
 

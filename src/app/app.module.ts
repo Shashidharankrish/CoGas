@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
 import { LoginComponent } from './login/login.component';
-import { AssignShiftComponent } from './assign-shift/assign-shift.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +24,7 @@ import { EditShiftComponent } from './edit-shift/edit-shift.component';
 import { EditSecurityComponent } from './edit-security/edit-security.component';
 import { AddShiftComponent } from './add-shift/add-shift.component';
 import { SecurityListComponent } from './security-list/security-list.component';
+import { AssignmentComponent } from './assignment/assignment.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { SecurityListComponent } from './security-list/security-list.component';
     AddsecurityComponent,
     AddDeviceComponent,
     LoginComponent,
-    AssignShiftComponent,
     NavbarComponent,
     DashboardComponent,
     HomeComponent,
@@ -45,7 +44,8 @@ import { SecurityListComponent } from './security-list/security-list.component';
     EditShiftComponent,
     EditSecurityComponent,
     AddShiftComponent,
-    SecurityListComponent
+    SecurityListComponent,
+    AssignmentComponent
   ],
   imports: [
     BrowserModule,

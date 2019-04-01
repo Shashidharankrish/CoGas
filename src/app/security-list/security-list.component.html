@@ -1,3 +1,59 @@
-<p>
-  security-list works!
-</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Security List</h1>
+  <!-- It won't show if there is no Security data -->
+  <a routerLink="/addsecurity" class="btn btn-success" *ngIf="hideWhenNoSecurity">
+    <i class="fas fa-plus custom-fa-plus"></i>
+    AddSecurity
+  </a>
+</div>
+
+<div class="pricing-header mx-auto">
+
+  <!-- Preloader shows before the data loads-->
+  <div class="no-data text-center" *ngIf="preLoader">
+    <img src="assets/preloader.gif" class="preloader-icon" alt="No Security">
+  </div>
+
+  <!-- No data shows when their is no Security data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    <p class="nodata-msg">No Security added yet!</p>
+    <a routerLink="/addsecurity" class="btn btn-success">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add Security
+    </a>
+  </div>
+
+  <!-- Showing Security data -->
+  <div class="container">
+
+
+    <div class="table-responsive" *ngIf="hideWhenNoSecurity">
+      <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+        <thead>
+          <tr>
+            <th scope="col">Security ID</th>
+            <th scope="col">Security name</th>
+            <th scope="col">Security Type</th>
+            <th scope="col">Security Count</th>
+            <th scope="col">Security Avalability</th>
+            <th class="text-center" scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- *ngFor loop iterates over Security array and fetch the Security's data -->
+          <tr *ngFor="let security of Security; let i = index;">
+            <th scope="row">{{security.$key}}</th>
+            <td>{{security.securityName}}</td>
+            <td>{{security. phoneNumber}}</td>
+            <td>{{security.count}}</td>
+            <td>{{security.availability}}</td>
+            <td class="text-center action-block">
+              <!-- routerLink="/edit-Security/{{Security.$key}}" is refered to { path: 'edit-Security/:id', component: EditSecurityComponent } in app-routing.moudles.ts -->
+              <i class="far fa-edit" routerLink="/edit-security/{{security.$key}}"></i>
+              <i class="far fa-trash-alt" (click)="deleteSecurity(security)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

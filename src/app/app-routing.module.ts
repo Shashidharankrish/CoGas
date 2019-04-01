@@ -4,7 +4,7 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
-import { AssignShiftComponent } from './assign-shift/assign-shift.component';
+import { AssignmentComponent } from './assignment/assignment.component';
 import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { HomeComponent } from './home/home.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
  { path: "add-shift", component:AddShiftComponent},
  { path: "edit-shift/:id", component:EditShiftComponent},
  { path: "shift-list", component:ShiftListComponent},
- { path: "assignshift", component:AssignShiftComponent},
+ { path: "assignment", component:AssignmentComponent},
  { path: "addsecurity", component:AddsecurityComponent},
  { path: "security-list", component:SecurityListComponent},
  { path: "edit-security/:id", component:EditSecurityComponent},
