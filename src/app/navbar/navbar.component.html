@@ -1,24 +1,3 @@
-<!-- <div class="topnav" id="myTopnav">
-  <a routerLink="home">Home</a>
-  <a routerLink="admin">Add Admins</a>
-    <a data-toggle="dropdown" class="dropdown-toggle">Devices<b class="caret"></b></a>
-    <ul class="dropdown-menu multi-level">
-      <li><a routerLink="device-list">Device LIst</a></li>
-      <li><a routerLink="add-device">Add Device</a></li>
-    </ul>
-  <a routerLink="addsecurity">Add Securities</a>
-  <a href="javascript:void(0);" class="icon">
-    <i class="fa fa-bars"></i>
-  </a>
-  <div class="right-text">
-    <a>My Account</a>
-  </div>
-</div> -->
-
-
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -37,8 +16,8 @@
             Admin
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="device-list">Admin List</a>
-            <a class="dropdown-item" routerLink="add-device">Add Admin</a>
+            <a class="dropdown-item" routerLink="add-admin">Add Admin</a>
+            <a class="dropdown-item" routerLink="admin-list">Admin List</a>
           </div>
         </li>
 
@@ -48,8 +27,8 @@
           Devices
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="device-list">Device List</a>
           <a class="dropdown-item" routerLink="add-device">Add Device</a>
+          <a class="dropdown-item" routerLink="device-list">Device List</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -58,12 +37,19 @@
           Shift
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="shift-list">Shift List</a>
-          <a class="dropdown-item" routerLink="add-shift">Add Shift</a>
+          <a class="dropdown-item" routerLink="shift-list">Add Shift</a>
+          <a class="dropdown-item" routerLink="add-shift">Shift List</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Add Securities</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Shift
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="addsecurity">Add Security</a>
+          <a class="dropdown-item" routerLink="security-list">Securities List</a>
+        </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

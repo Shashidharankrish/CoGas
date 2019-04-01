@@ -19,6 +19,12 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
+import { ShiftListComponent } from './shift-list/shift-list.component';
+import { EditAdminComponent } from './edit-admin/edit-admin.component';
+import { EditShiftComponent } from './edit-shift/edit-shift.component';
+import { EditSecurityComponent } from './edit-security/edit-security.component';
+import { AddShiftComponent } from './add-shift/add-shift.component';
+import { SecurityListComponent } from './security-list/security-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
     DeviceListComponent,
     EditDeviceComponent,
     AdminListComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    ShiftListComponent,
+    EditAdminComponent,
+    EditShiftComponent,
+    EditSecurityComponent,
+    AddShiftComponent,
+    SecurityListComponent
   ],
   imports: [
     BrowserModule,

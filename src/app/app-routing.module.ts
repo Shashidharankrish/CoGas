@@ -9,15 +9,26 @@ import { AddsecurityComponent } from './addsecurity/addsecurity.component';
 import { HomeComponent } from './home/home.component';
 import { EditDeviceComponent } from './edit-device/edit-device.component';
 import { AddShiftComponent } from './add-shift/add-shift.component';
+import { EditAdminComponent } from './edit-admin/edit-admin.component';
+import { EditShiftComponent } from './edit-shift/edit-shift.component';
+import { ShiftListComponent } from './shift-list/shift-list.component';
+import { SecurityListComponent } from './security-list/security-list.component';
+import { EditSecurityComponent } from './edit-security/edit-security.component';
 
 const routes: Routes = [
+ { path: "add-device", component:AddDeviceComponent},
  { path:"device-list",component:DeviceListComponent},
  { path:"edit-device/:id",component:EditDeviceComponent},
- { path: "admin-list", component:AdminListComponent},
  { path: "add-admin", component:AddAdminComponent},
- { path: "add-device", component:AddDeviceComponent},
+ { path: "admin-list", component:AdminListComponent},
+ { path: "edit-admin/:id", component:EditAdminComponent},
+ { path: "add-shift", component:AddShiftComponent},
+ { path: "edit-shift/:id", component:EditShiftComponent},
+ { path: "shift-list", component:ShiftListComponent},
  { path: "assignshift", component:AssignShiftComponent},
  { path: "addsecurity", component:AddsecurityComponent},
+ { path: "security-list", component:SecurityListComponent},
+ { path: "edit-security/:id", component:EditSecurityComponent},
  { path: "home", component:HomeComponent},
  { path: '', redirectTo: 'home', pathMatch: 'full'},
 ];

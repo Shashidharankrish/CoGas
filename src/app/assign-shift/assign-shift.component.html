@@ -17,10 +17,6 @@
       <th>
         Device
       </th>
-
-
-
-      <th></th>
     </tr>
   </thead>
   <tbody data-provides="rowlink">
@@ -28,7 +24,7 @@
       <td>
         <div class="dropdown">
 
-          <select class="custom-select" style="width:200px;" searchable="Search here.."  required [(ngModel)]=selectedShift>
+          <select class="custom-select" required [(ngModel)]=selectedShift>
             <option value="" disabled selected>Select-Shift</option>
             <option value="1">Shift 1</option>
             <option value="2">Shift 2</option>
@@ -42,7 +38,7 @@
       <td>
         <div class="dropdown">
 
-          <select class="custom-select" style="width:200px;" searchable="Search here.." required [(ngModel)]=selectedSecurity>
+          <select class="custom-select" required [(ngModel)]=selectedSecurity>
             <option value="" disabled selected>Select-Security</option>
             <option value="1">Security 1</option>
             <option value="2">Security 2</option>
@@ -54,7 +50,7 @@
       <td>
         <div class="dropdown">
 
-          <select class="custom-select" style="width:200px;" searchable="Search here.." required [(ngModel)]=selectedDevice>
+          <select class="custom-select" required [(ngModel)]=selectedDevice>
             <option value="" disabled selected>Select-Device</option>
             <option value="1">Device 1</option>
             <option value="2">Device 2</option>
@@ -68,8 +64,6 @@
 
 
       <td><button class="btn btn-success btn1" (click)="update()">Update</button></td>
-    </tr>
-    <tr>
     </tr>
   </tbody>
 </table>​

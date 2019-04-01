@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
 import { Devices } from './devices';
 import { Shifts } from './shifts';
 import { Securities } from './securities';
+import { Admins } from './admins';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,8 @@ export class CrudService {
   shiftRef: AngularFireObject<any>;
   securitiesRef: AngularFireList<any>;
   securityRef: AngularFireObject<any>;
+  adminsRef: AngularFireList<any>;
+  adminRef: AngularFireObject<any>;
 
   // Inject AngularFireDatabase Dependency in Constructor
   constructor(private db: AngularFireDatabase) { }
@@ -30,7 +33,6 @@ export class CrudService {
       count: device.count,
       availability: device.availability
     })
-    alert(device.deviceName+"Added");
   }
 
   // Fetch Single device Object
@@ -141,4 +143,44 @@ export class CrudService {
     this.shiftRef.remove();
   }
   
+//  Related to Admins
+
+  // Create Admin
+  AddAdmin(admin: Admins) {
+    this.adminsRef.push({
+      adminName: admin.adminName,
+      email: admin.email,
+      password: admin.password,
+      phoneNumber: admin.phoneNumber
+    })
+  }
+
+  // Fetch Single admin Object
+  Getadmin(id: string) {
+    this.adminRef = this.db.object('admins-list/' + id);
+    return this.adminRef;
+  }
+
+  // Fetch admins List
+  GetAdminsList() {
+    this.adminsRef = this.db.list('admins-list');
+    return this.adminsRef;
+  }  
+
+  // Update admin Object
+  UpdateAdmin(admin: Admins) {
+    this.adminRef.update({
+      adminName: admin.adminName,
+      email: admin.email,
+      password: admin.password,
+      phoneNumber: admin.phoneNumber
+    })
+  }  
+
+  // Delete admin Object
+  DeleteAdmin(id: string) { 
+    this.adminRef = this.db.object('admins-list/'+id);
+    this.adminRef.remove();
+  }
+
 }

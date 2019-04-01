@@ -1,3 +1,57 @@
-<p>
-  admin-list works!
-</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Admins List</h1>
+  <!-- It won't show if there is no Admin data -->
+  <a routerLink="/add-admin" class="btn btn-success" *ngIf="hideWhenNoAdmin">
+    <i class="fas fa-plus custom-fa-plus"></i>
+    Add Admin
+  </a>
+</div>
+
+<div class="pricing-header mx-auto">
+
+  <!-- Preloader shows before the data loads-->
+  <div class="no-data text-center" *ngIf="preLoader">
+    <img src="assets/preloader.gif" class="preloader-icon" alt="No Admin">
+  </div>
+
+  <!-- No data shows when their is no admin data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    <p class="nodata-msg">No Admin added yet!</p>
+    <a routerLink="/add-admin" class="btn btn-success">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add Admin
+    </a>
+  </div>
+
+  <!-- Showing Admin data -->
+  <div class="container">
+    
+  
+  <div class="table-responsive" *ngIf="hideWhenNoAdmin">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+        <tr>
+          <th scope="col">Admin ID</th>
+          <th scope="col">Admin name</th>
+          <th scope="col">Admin eMail</th>
+          <th scope="col">Phone Number</th>
+          <th class="text-center" scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over Admin array and fetch the Admin's data -->
+        <tr *ngFor="let admin of Admin; let i = index;">
+          <th scope="row">{{admin.$key}}</th>
+          <td>{{admin.adminName}}</td>
+          <td>{{admin.email}}</td>
+          <td>{{admin.phoneNumber}}</td>
+          <td class="text-center action-block">
+            <!-- routerLink="/edit-admin/{{Admin.$key}}" is refered to { path: 'edit-admin/:id', component: EditAdminComponent } in app-routing.moudles.ts -->
+           <i class="far fa-edit" routerLink="/edit-admin/{{admin.$key}}"></i>
+            <i class="far fa-trash-alt" (click)="deleteAdmin(admin)"></i></td>
+        </tr>   
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

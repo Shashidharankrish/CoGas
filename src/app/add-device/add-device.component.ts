@@ -52,6 +52,7 @@ ResetForm(){
 }
 submitDeviceData(){
 this.crudApi.AddDevice(this.deviceForm.value);
+this.toastr.success(this.deviceForm.controls['deviceName'].value + ' added successfully');
 this.ResetForm();
 }
 }
