@@ -51,8 +51,8 @@ export class DeviceListComponent implements OnInit {
   // Method to delete Device object
   deleteDevice(device) {
     if (window.confirm('Are sure you want to delete this Device ?')) { // Asking from user before Deleting Device data.
-      this.crudApi.DeleteDevice(device.$key) // Using Delete Device API to delete Device.
       this.toastr.success(device.deviceName + ' successfully deleted!'); // Alert message will show up when Device successfully deleted.
+      this.crudApi.DeleteDevice(device.$key) // Using Delete Device API to delete Device.
     }
   }
 }

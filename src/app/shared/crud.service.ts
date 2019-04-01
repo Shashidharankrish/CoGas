@@ -45,7 +45,7 @@ export class CrudService {
   GetDevicesList() {
     this.devicesRef = this.db.list('devices-list');
     return this.devicesRef;
-  }  
+  }
 
   // Update device Object
   UpdateDevice(device: Devices) {
@@ -55,17 +55,17 @@ export class CrudService {
       count: device.count,
       availability: device.availability
     })
-  }  
+  }
 
   // Delete device Object
-  DeleteDevice(id: string) { 
-    this.deviceRef = this.db.object('devices-list/'+id);
+  DeleteDevice(id: string) {
+    this.deviceRef = this.db.object('devices-list/' + id);
     this.deviceRef.remove();
   }
 
 
   // Related to Securites
- 
+
 
   // Create Security
   AddSecurity(security: Securities) {
@@ -75,11 +75,11 @@ export class CrudService {
       count: security.count,
       availability: security.availability
     })
-    alert(security.securityName+" Added");
+    alert(security.securityName + " Added");
   }
 
-   // Fetch Single Security Object
-   Getsecurity(id: string) {
+  // Fetch Single Security Object
+  Getsecurity(id: string) {
     this.securityRef = this.db.object('securities-list/' + id);
     return this.securityRef;
   }
@@ -101,12 +101,12 @@ export class CrudService {
   }
 
   // Delete Security Object
-  DeleteSecurity(id: string) { 
-    this.securityRef = this.db.object('securites-list/'+id);
+  DeleteSecurity(id: string) {
+    this.securityRef = this.db.object('securites-list/' + id);
     this.securityRef.remove();
   }
 
-// Related to Shifts
+  // Related to Shifts
   // Create Shift
   AddShift(shift: Shifts) {
     this.shiftsRef.push({
@@ -116,8 +116,8 @@ export class CrudService {
     })
   }
 
-   // Fetch Single shift Object
-   GetShift(id: string) {
+  // Fetch Single shift Object
+  GetShift(id: string) {
     this.shiftRef = this.db.object('shifts-list/' + id);
     return this.shiftRef;
   }
@@ -137,12 +137,12 @@ export class CrudService {
   }
 
   // Delete shift Object
-  DeleteShift(id: string) { 
-    this.shiftRef = this.db.object('shifts-list/'+id);
+  DeleteShift(id: string) {
+    this.shiftRef = this.db.object('shifts-list/' + id);
     this.shiftRef.remove();
   }
-  
-//  Related to Admins
+
+  //  Related to Admins
 
   // Create Admin
   AddAdmin(admin: Admins) {
@@ -164,7 +164,7 @@ export class CrudService {
   GetAdminsList() {
     this.adminsRef = this.db.list('admins-list');
     return this.adminsRef;
-  }  
+  }
 
   // Update admin Object
   UpdateAdmin(admin: Admins) {
@@ -174,11 +174,11 @@ export class CrudService {
       password: admin.password,
       phoneNumber: admin.phoneNumber
     })
-  }  
+  }
 
   // Delete admin Object
-  DeleteAdmin(id: string) { 
-    this.adminRef = this.db.object('admins-list/'+id);
+  DeleteAdmin(id: string) {
+    this.adminRef = this.db.object('admins-list/' + id);
     this.adminRef.remove();
   }
 

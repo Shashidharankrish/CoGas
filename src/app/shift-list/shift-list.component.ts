@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../shared/crud.service';  // CRUD API service class
-import { Shifts } from '../shared/shifts';   // Device interface class for Data types.
+import { Shifts } from '../shared/shifts';   // Shift interface class for Data types.
 import { ToastrService } from 'ngx-toastr';      // Alert message using NGX toastr
 
 @Component({
@@ -17,12 +17,12 @@ export class ShiftListComponent implements OnInit {
 
 
   constructor(
-    public crudApi: CrudService, // Inject Device CRUD services in constructor.
+    public crudApi: CrudService, // Inject Shift CRUD services in constructor.
     public toastr: ToastrService // Toastr service for alert message
   ) { }
 
   ngOnInit() {
-    this.dataState(); // Initialize Device's list, when component is ready
+    this.dataState(); // Initialize Shift's list, when component is ready
     let s = this.crudApi.GetShiftsList(); 
     s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
       this.Shift = [];
@@ -34,7 +34,7 @@ export class ShiftListComponent implements OnInit {
     })
   }
 
-  // Using valueChanges() method to fetch simple list of Devices data. It updates the state of hideWhenNoDevice, noData & preLoader variables when any changes occurs in Device data list in real-time.
+  // Using valueChanges() method to fetch simple list of Shifts data. It updates the state of hideWhenNoShift, noData & preLoader variables when any changes occurs in Shift data list in real-time.
   dataState() {     
     this.crudApi.GetShiftsList().valueChanges().subscribe(data => {
       this.preLoader = false;
@@ -48,11 +48,11 @@ export class ShiftListComponent implements OnInit {
     })
   }
 
-  // Method to delete Device object
+  // Method to delete Shift object
   deleteShift(shift) {
-    if (window.confirm('Are sure you want to delete this Shift ?')) { // Asking from user before Deleting Device data.
-      this.crudApi.DeleteShift(shift.$key) // Using Delete Device API to delete Device.
-      this.toastr.success(shift.shiftName + ' successfully deleted!'); // Alert message will show up when Device successfully deleted.
+    if (window.confirm('Are sure you want to delete this Shift ?')) { // Asking from user before Deleting Shift data.
+      this.crudApi.DeleteShift(shift.$key) // Using Delete Shift API to delete Shift.
+      this.toastr.success(shift.shiftName + ' successfully deleted!'); // Alert message will show up when Shift successfully deleted.
     }
   }
 }
