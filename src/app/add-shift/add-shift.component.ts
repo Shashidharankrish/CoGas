@@ -29,7 +29,7 @@ shiftform(){
   });
   }
   get shiftName(){
-    return this.shiftForm.get('deviceName');
+    return this.shiftForm.get('shiftName');
   }
   
   get shiftCount(){
@@ -45,6 +45,7 @@ shiftform(){
   }
   submitShiftData(){
   this.crudApi.AddShift(this.shiftForm.value);
+  this.shiftForm.controls['shiftName'].value + ' added successfully';
   this.ResetForm();
   }
 }

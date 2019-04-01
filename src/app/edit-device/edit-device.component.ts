@@ -67,7 +67,7 @@ export class EditDeviceComponent implements OnInit {
   updateForm(){
     this.crudApi.UpdateDevice(this.editForm.value);       // Update Device data using CRUD API
     this.toastr.success(this.editForm.controls['deviceName'].value + ' updated successfully');   // Show succes message when data is successfully submited
-    this.router.navigate(['view-devices']);               // Navigate to Device's list page when Device data is updated
+    this.router.navigate(['device-list']);               // Navigate to Device's list page when Device data is updated
   }
 
 }
