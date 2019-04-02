@@ -14,6 +14,7 @@ import { EditShiftComponent } from './edit-shift/edit-shift.component';
 import { ShiftListComponent } from './shift-list/shift-list.component';
 import { SecurityListComponent } from './security-list/security-list.component';
 import { EditSecurityComponent } from './edit-security/edit-security.component';
+import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
 
 const routes: Routes = [
  { path: "add-device", component:AddDeviceComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
  { path: "addsecurity", component:AddsecurityComponent},
  { path: "security-list", component:SecurityListComponent},
  { path: "edit-security/:id", component:EditSecurityComponent},
+ { path: "add-assignment", component:AddAssignmentComponent},
  { path: "home", component:HomeComponent},
  { path: '', redirectTo: 'home', pathMatch: 'full'},
 ];

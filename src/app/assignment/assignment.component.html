@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Assignment</h1>
+  <!-- It won't show if there is no Device data -->
+  <a routerLink="/add-assignment" class="btn btn-success" *ngIf="hideWhenNoAssignment">
+    <i class="fas fa-plus custom-fa-plus"></i>
+    New Assignment
+  </a>
+</div>
+
+<div class="pricing-header mx-auto">
+
+  <!-- Preloader shows before the data loads-->
+  <div class="no-data text-center" *ngIf="preLoader">
+    <img src="assets/preloader.gif" class="preloader-icon" alt="No Device">
+  </div>
+
+  <!-- No data shows when their is no device data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    <p class="nodata-msg">No Assignment added yet!</p>
+    <a routerLink="/add-assignment" class="btn btn-success">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      New Assignment 2
+    </a>
+  </div>
+
+  <!-- Showing Device data -->
+  <div class="container">
+
+    <div class="col-sm-6">
+    <div class="table-responsive" *ngIf="hideWhenNoAssignment">
+      <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+        <thead>
+
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</div>

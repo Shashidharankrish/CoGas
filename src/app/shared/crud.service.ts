@@ -4,6 +4,7 @@ import { Devices } from './devices';
 import { Shifts } from './shifts';
 import { Securities } from './securities';
 import { Admins } from './admins';
+import { Assignments } from '../shared/assignments';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,8 @@ export class CrudService {
   securityRef: AngularFireObject<any>;
   adminsRef: AngularFireList<any>;
   adminRef: AngularFireObject<any>;
+  assignmentsRef: AngularFireList<any>;
+  assignmentRef: AngularFireObject<any>;
 
   // Inject AngularFireDatabase Dependency in Constructor
   constructor(private db: AngularFireDatabase) { }
@@ -182,4 +185,40 @@ export class CrudService {
     this.adminRef.remove();
   }
 
+  // Related to Assignments
+
+GetAssignmentsList(){
+  this.assignmentsRef = this.db.list('assignments-list');
+  return this.assignmentsRef;
+  }
+// Create Admin
+AddAssignment(assignment: Assignments) {
+  this.assignmentsRef.push({
+    deviceName: assignment.deviceName,
+    shiftName: assignment.shiftName,
+    securityName: assignment.securityName
+  })
 }
+
+// Fetch Single admin Object
+GetAssignment(id: string) {
+  this.assignmentRef = this.db.object('aassignments-list/' + id);
+  return this.assignmentRef;
+}
+
+// Update admin Object
+UpdateAssignment(assignment: Assignments) {
+  this.assignmentRef.update({
+    deviceName: assignment.deviceName,
+    shiftName: assignment.shiftName,
+    securityName: assignment.securityName
+  })
+}
+
+// Delete admin Object
+DeleteAssignment(id: string) {
+  this.assignmentRef = this.db.object('assignments-list/' + id);
+  this.assignmentRef.remove();
+}
+}
+

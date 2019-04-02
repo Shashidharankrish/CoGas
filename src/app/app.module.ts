@@ -25,6 +25,7 @@ import { EditSecurityComponent } from './edit-security/edit-security.component';
 import { AddShiftComponent } from './add-shift/add-shift.component';
 import { SecurityListComponent } from './security-list/security-list.component';
 import { AssignmentComponent } from './assignment/assignment.component';
+import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AssignmentComponent } from './assignment/assignment.component';
     EditSecurityComponent,
     AddShiftComponent,
     SecurityListComponent,
-    AssignmentComponent
+    AssignmentComponent,
+    AddAssignmentComponent
   ],
   imports: [
     BrowserModule,
