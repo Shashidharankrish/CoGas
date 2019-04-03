@@ -202,7 +202,7 @@ AddAssignment(assignment: Assignments) {
 
 // Fetch Single admin Object
 GetAssignment(id: string) {
-  this.assignmentRef = this.db.object('aassignments-list/' + id);
+  this.assignmentRef = this.db.object('assignments-list/' + id);
   return this.assignmentRef;
 }
 
