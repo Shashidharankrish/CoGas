@@ -195,8 +195,8 @@ GetAssignmentsList(){
 AddAssignment(assignment: Assignments) {
   this.assignmentsRef.push({
     deviceName: assignment.deviceName,
-    shiftName: assignment.shiftName,
-    securityName: assignment.securityName
+    securityName: assignment.securityName,
+    shiftName: assignment.shiftName
   })
 }
 

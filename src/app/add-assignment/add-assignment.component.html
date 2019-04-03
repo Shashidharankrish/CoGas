@@ -38,7 +38,7 @@
             <div class="col-sm-4">
                 <div class="dropdown">
                     <strong>Assign Shift</strong>
-                    <select class="custom-select" formConrtolName="shiftName">
+                    <select class="custom-select" formControlName="shiftName">
                         <option value="" disabled selected>Select-Shift</option>
                         <option *ngFor="let shift of Shift" #shiftName>{{shift.shiftName}}</option>
                     </select>

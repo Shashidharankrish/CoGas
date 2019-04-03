@@ -14,18 +14,35 @@
             </div>
 
             <div class="form-group">
-                <label>Device Type</label>
-                <input type="text" formControlName="deviceType" class="form-control">
+                    <div class="dropdown">
+                        <label>Device Type</label>
+                        <select class="custom-select" formControlName="deviceType">
+                                <option value="" disabled selected>Select-Type</option>
+                            <option value="app">App</option>
+                            <option value="device">Device</option>
+                        </select>
+                    </div>
             </div>
+
+
             <div class="form-group">
                 <label>Count</label>
-                <input type="email" formControlName="count" class="form-control" required>
+                <input type="number" formControlName="count" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label>Availability</label>
-                <input type="text" formControlName="availability" class="form-control" required>
+                <div class="dropdown">
+                    <label>Availability</label>
+                    <select class="custom-select" formControlName="availability">
+                            <option value="" disabled selected>Select-Availability</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
             </div>
+
+           
+
             <div class="form-group">
                     <button type="reset" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
                     <button type="submit" class="btn btn-success float-right" [disabled]="!deviceForm.valid">Add Device</button>
