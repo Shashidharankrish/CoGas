@@ -45,7 +45,7 @@
 
             <div class="form-group">
                     <button type="reset" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
-                    <button type="submit" class="btn btn-success float-right" [disabled]="!deviceForm.valid">Add Device</button>
+                    <button type="submit" class="btn btn-success float-right" [disabled]="deviceForm.invalid">Add Device</button>
             </div>
         </div>    
     <div class="col-sm-4"></div>

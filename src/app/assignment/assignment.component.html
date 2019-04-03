@@ -27,16 +27,21 @@
   <div class="container">
 
     <div class="col-sm-6">
-    <div class="table-responsive" *ngIf="hideWhenNoAssignment">
-      <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
-        <thead>
+      <div class="table-responsive" *ngIf="hideWhenNoAssignment">
+        <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+          <tr>
+            <th>Device Name </th>
+            <th> Security Name</th>
+            <th>Shift Name </th>
+          </tr>
+          <tr *ngFor="let assignedList of Assignment">
+            <td>{{assignedList.deviceName}}</td>
+            <td>{{assignedList.securityName}}</td>
+            <td>{{assignedList.shiftName}}</td>
+          </tr>
 
-        </thead>
-        <tbody>
-         
-        </tbody>
-      </table>
+        </table>
+      </div>
     </div>
-  </div>
   </div>
 </div>
