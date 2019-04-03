@@ -30,7 +30,9 @@ securityform(){
     availability: [''],
 })
 }
-
+changed(){
+  alert("hi")
+}
 get securityName(){
   return this.securityForm.get('securityName');
 }

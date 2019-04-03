@@ -1,10 +1,6 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">New Assignment</h1>
     <!-- It won't show if there is no Assignment data -->
-    <a routerLink="/add-assignment" class="btn btn-success" *ngIf="hideWhenNoAssignment">
-        <i class="fas fa-plus custom-fa-plus"></i>
-        New Assignment
-    </a>
 </div>
 
 <div class="pricing-header mx-auto">
@@ -18,9 +14,9 @@
             <div class="col-sm-4">
                 <div class="dropdown">
                     <strong>Assign Device</strong>
-                    <select class="custom-select" formControlName="deviceName">
+                    <select class="custom-select" formControlName="deviceName" required>
                         <option value="" disabled selected>Select-Device</option>
-                        <option *ngFor="let device of Device" #deviceName>{{device.deviceName}}</option>
+                        <option *ngFor="let device of Device">{{device.deviceName}}</option>
                     </select>
                 </div>
             </div>
@@ -28,7 +24,7 @@
             <div class="col-sm-4">
                 <div class="dropdown">
                     <strong>Assign Security</strong>
-                    <select class="custom-select" formControlName="securityName">
+                    <select class="custom-select" formControlName="securityName" required>
                         <option value="" disabled selected>Select-Security</option>
                         <option *ngFor="let security of Security" >{{security.securityName}}</option>
                     </select>
@@ -38,16 +34,16 @@
             <div class="col-sm-4">
                 <div class="dropdown">
                     <strong>Assign Shift</strong>
-                    <select class="custom-select" formControlName="shiftName">
+                    <select class="custom-select" formControlName="shiftName" required>
                         <option value="" disabled selected>Select-Shift</option>
-                        <option *ngFor="let shift of Shift" #shiftName>{{shift.shiftName}}</option>
+                        <option *ngFor="let shift of Shift">{{shift.shiftName}}</option>
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
+        </div><br><br>
+        <div class="form-group text-center">
             <button type="reset" class="btn btn-secondary gap-right" >Reset</button>
-            <button type="submit" class="btn btn-success float-right">Assign</button>
+            <button type="submit" class="btn btn-success" [disabled]="assignmentForm.invalid">Assign</button>
         </div>
     </form>
 </div>

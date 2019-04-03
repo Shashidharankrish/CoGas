@@ -8,6 +8,8 @@ import { Shifts } from '../shared/shifts';   // Shift interface class for Data t
 import { Securities } from '../shared/securities'; // Securities interface class for Data types.
 import { Assignments } from '../shared/assignments';
 import { containsElement } from '@angular/animations/browser/src/render/shared';
+import { forEach } from '@angular/router/src/utils/collection';
+import { assertNotNull } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-add-assignment',
@@ -145,5 +147,15 @@ export class AddAssignmentComponent implements OnInit {
   }
   submitAssignmentData(){
     this.crudApi.AddAssignment(this.assignmentForm.value)
+    this.check();
+  }
+  
+
+  check(){
+    for(let i=0; i<=this.Device.length;i++){
+      if(this.Device[i].deviceName===this.Assignment[i].deviceName){
+          console.log(this.Assignment[i].deviceName, this.Device[i].deviceName);
+      }
+    }
   }
 }
